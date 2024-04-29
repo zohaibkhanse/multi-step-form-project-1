@@ -1,0 +1,13 @@
+{
+  "name": "multi-page-form",
+  "version": "1.0.0",
+  "description": "Practice Project",
+  "scripts": {
+    "test": "sass --watch scss/main.scss scss/main.css"
+  },
+  "author": "ZOHAIB-KHAN",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.75.0"
+  }
+}

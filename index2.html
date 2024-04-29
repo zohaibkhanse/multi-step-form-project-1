@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+    <title>Frontend Mentor | Multi-step form</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./scss/main.css">
+    <script defer type="module" src="./src/js/controller.js"></script>
+</head>
+<body>
+    <form action="" class="container">
+        <!-- Progress Sidebar START -->
+        <aside class="progress">
+            <div class="progress__step progress__step--1">
+                <span class="progress__step-number">1</span> 
+                <div class="progress__step-info"><span>STEP 1</span>Your Info</div>
+            </div>
+            <div class="progress__step progress__step--2">
+                <span class="progress__step-number">2</span> 
+                <div class="progress__step-info"><span>STEP 2</span>Select plan</div>
+            </div>
+            <div class="progress__step progress__step--3">
+                <span class="progress__step-number">3</span> 
+                <div class="progress__step-info"><span>STEP 3</span>Add-ons</div>
+            </div>
+            <div class="progress__step progress__step--4">
+                <span class="progress__step-number">4</span> 
+                <div class="progress__step-info"><span>STEP 4</span>Summary</div>
+            </div>
+        </aside>
+        <!-- Progress Steps Sidebar END -->
+
+        <!-- Form Info Steps START -->
+        <section class="form-info-steps">
+            <!-- Personal Information START -->
+            <div class="form-info-steps__step form-info-steps__personal-info form-info-steps__step--1 ">
+                <h2 class="form-info-steps__personal-info-title form-info-steps--title">Personal info</h2>
+                <p  class="form-info-steps__personal-info-intro form-info-steps--intro">Please provide your name, email address, and phone number.</p>
+                <!-- Name -->
+                <label class="form-info-steps__personal-info-label" for="name">Name</label>
+                <input class="form-info-steps__personal-info-input" type="text" name="name" id="name" placeholder="e.g. Stephen King" required>
+                <!-- Email -->
+                <label class="form-info-steps__personal-info-label" for="email">Email Address</label>
+                <input class="form-info-steps__personal-info-input" type="email" name="email" id="email" placeholder="e.g. stephenking@lorem.com" required>
+                <!-- Phone Number -->
+                <label class="form-info-steps__personal-info-label" for="phone">Phone Number</label>
+                <input class="form-info-steps__personal-info-input" type="text" name="phone" id="phone" placeholder="e.g. +1 234 567 890" required>
+            </div>
+            <!-- Personal Information END -->
+
+            <!-- Select Your Plane START -->
+            <div class="form-info-steps__step form-info-steps__select-your-plane form-info-steps__step--2 fake-hidden ">
+                <h2 class="form-info-steps__select-your-plane-title form-info-steps--title">Select your plan</h2>
+                <p  class="form-info-steps__select-your-plane-intro form-info-steps--intro">You have the option of monthly or yearly billing.</p>
+                <div class="form-info-steps__select-your-plane-planes">
+                    <div class="form-info-steps__select-your-plane-plane">
+                        <div class="plane-icon">
+                            <img src="./assets/images/icon-arcade.svg" alt="">
+                        </div>
+                        <div>
+                            <h3 class="plane-title">Arcade</h3>
+                            <p class="plane-payment">$9/mo</p>
+                            <p class="plane-bonus">2 months free</p>
+                        </div>
+                    </div>
+                    <div class="form-info-steps__select-your-plane-plane">
+                        <div class="plane-icon">
+                            <img src="./assets/images/icon-advanced.svg" alt="">
+                        </div>
+                        <div>
+                            <h3 class="plane-title">Advanced</h3>
+                            <p class="plane-payment">$12/mo</p>
+                            <p class="plane-bonus">2 months free</p>
+                        </div>
+                    </div>
+                    <div class="form-info-steps__select-your-plane-plane">
+                        <div class="plane-icon">
+                            <img src="./assets/images/icon-pro.svg" alt="">
+                        </div>
+                        <div>
+                            <h3 class="plane-title">Pro</h3>
+                            <p class="plane-payment">$15/mo</p>
+                            <p class="plane-bonus">2 months free</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-info-steps__select-your-plane-plane-options">
+                    <span class="plane-monthly-option">Monthly</span>
+                    <div data-state="true" class="plane-options-btn"><span></span></div>
+                    <span class="plane-yearly-option">Yearly</span>
+                </div>
+
+            </div>
+            <!-- Select Your Plane END -->
+
+            <!-- Pick Add ons START -->
+            <div class="form-info-steps__step form-info-steps__pick-add-ons form-info-steps__step--3 fake-hidden">
+                <h2 class="form-info-steps__pick-add-ons-title form-info-steps--title">Pick add-ons</h2>
+                <p  class="form-info-steps__pick-add-ons-intro form-info-steps--intro">Add-ons help enhance your gaming experience.</p>
+                <!-- Online Service START -->
+                <div class="form-info-steps__pick-add-ons-add-ons">
+                    <input type="checkbox" name="" id="">
+                    <div>
+                        <h3 class="add-ons-title">Online service</h3>
+                        <p class="add-ons-info">Access to multiplayer games</p>
+                    </div>
+                    <p class="add-ons-plane-info">+$1/mo</p>
+                </div>
+                <!-- Online Service END -->
+                
+                <!-- Larger Storage START  -->
+                <div class="form-info-steps__pick-add-ons-add-ons">
+                    <input type="checkbox" name="" id="">
+                    <div>
+                        <h3 class="add-ons-title">Larger storage</h3>
+                        <p class="add-ons-info">Extra 1TB of cloud save</p>
+                    </div>
+                    <p class="add-ons-plane-info">+$2/mo</p>
+                </div>
+                <!-- Larger Storage END  -->
+
+                <!-- Customizable profile START  -->
+                <div class="form-info-steps__pick-add-ons-add-ons">
+                    <input type="checkbox" name="" id="">
+                    <div>
+                        <h3 class="add-ons-title">Customizable Profile</h3>
+                        <p class="add-ons-info">Custom theme on your profile</p>
+                    </div>
+                    <p class="add-ons-plane-info">+$2/mo</p>
+                </div>
+                <!-- Customizable profile END  -->
+            </div>
+            <!-- Pick Add ons END -->
+            
+            <!-- Finishing Up START -->
+            <div class="form-info-steps__step form-info-steps__finishing-up form-info-steps__step--4 fake-hidden">
+                <h2 class="form-info-steps__finishing-up-title form-info-steps--title">Finishing up</h2>
+                <p  class="form-info-steps__finishing-up-intro form-info-steps--intro">Double-check everything looks OK before confirming.</p>
+                <div class="form-info-steps__finishing-up-short-summery">
+                <div class="form-info-steps__finishing-up-summery top">
+                    <div>
+                        <h3 class="arcade-title" >Arcade (Monthly)</h3>
+                        <a class="arcade-change-plane-link" href="#">Change</a>
+                    </div>
+                    <p class="arcade-payment-info">$9/mo</p>
+                </div>
+
+                <div class="form-info-steps__finishing-up-summery">
+                     <p class="online-service-title">Online Service</p>
+                    <p class="online-service-payment-info">+$1/mo</p>
+                </div>
+                <div class='form-info-steps__finishing-up-summery'>
+                    <p class="larger-storage-title">Larger Storage</p>
+                    <p class="larger-storage-payment-info">+$1/mo</p>
+                </div>
+            </div>
+                <div class="form-info-steps__finishing-up-summery total-price">
+                    <p class="total-payment-title">Total (per month)</p>
+                    <p class="total-payment-payment-info">+$12/mo</p>
+                </div>
+            </div>
+            <!-- Finishing Up END -->
+
+            <!-- Thank You Step Start -->
+            <div class="form-info-steps__thank-you-info fake-hidden">
+                <img class="form-info-steps__thank-you-info-image"src="./assets/images/icon-thank-you.svg" alt="">
+                <h2 class="form-info-steps__thank-you-info-title form-info-steps--title">Thank You!</h2>
+                <p  class="form-info-steps__thank-you-info-intro form-info-steps--intro">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.</p>
+            </div>
+
+        </section>
+
+        <!-- Form Info Steps END -->
+
+        <!-- Progress Buttons START -->
+        <div class="progress-btns">
+            <!-- <button class="progress-btns__btn btn btn--previous">Go Back</button>
+            <button class="progress-btns__btn btn btn--next">Next Step</button> -->
+        </div>
+        <!-- Progress Buttons END -->
+
+
+    </form>
+</body>
+</html>

@@ -1,0 +1,12 @@
+
+@media  screen and (min-width:768px) {
+   @include containerLS1;
+   @include sidebarLS;
+   @include buttonLS;
+   @include formInfoStepsLs;
+}
+// @media  screen and (min-width:768px) {
+//     .container{
+//         max-width: 920px;
+//     }
+// }

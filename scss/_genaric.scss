@@ -1,0 +1,28 @@
+.form-info-steps{
+
+    &--title, &__select-your-plane-plane .plane-title{
+            color:$Marine-blue;
+        }
+    &--intro{
+        margin: .7rem 0 1.2rem;
+       
+    }
+
+    &__select-your-plane-plane .plane-title{
+        font-size: 1.2rem;
+    }
+
+   
+}
+
+.input-error{
+    border-color: red !important;
+    
+}
+.input-error-message{
+    color:red;
+    font-size: 14px;
+}
+
+
+

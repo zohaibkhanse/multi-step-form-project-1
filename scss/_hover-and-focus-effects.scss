@@ -1,0 +1,16 @@
+
+.btn--next:focus,
+.btn--next:hover {
+    background-color:$Purplish-blue;
+    // color:inherit;
+}
+.form-info-steps{
+    &__select-your-plane-plane:hover{
+        border-color: $Purplish-blue;
+        background-color: $Magnolia;
+    }
+
+    &__personal-info-input:focus{
+        color:$Marine-blue;
+    }
+ }

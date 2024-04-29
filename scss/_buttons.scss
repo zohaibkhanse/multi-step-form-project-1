@@ -1,0 +1,53 @@
+.progress-btns{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color:$White ;
+    padding: 1.2rem;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+
+}
+
+.btn{
+    padding: 10px 1rem;
+    font-size: 1rem;
+    border:0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.btn--previous{
+    background-color:$Light-gray;
+    // color:inherit;
+}
+.btn--next{
+    background-color: $Marine-blue;
+    color:$White;
+    font-weight: 500;
+    margin-left: auto;
+}
+
+.plane-options-btn{
+    width: 40px;
+    height: 20px;
+    background-color: red;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    span{
+        transition: all 250ms linear;
+        width: 20px;
+        height: 20px;  
+        background-color: #fff;
+        border-radius: 15px;
+    }
+
+}
+
+@mixin buttonLS{
+    .progress-btns{
+        position: static;
+    }
+}
