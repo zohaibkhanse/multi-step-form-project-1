@@ -20,6 +20,11 @@
   font-size: 14px;
 }
 
+.form-info-steps__select-your-plane-plane.active-plane {
+  border-color: hsl(243, 100%, 62%);
+  background-color: hsl(217, 100%, 97%);
+}
+
 /*//////////////////////////////////////////
     Hover and Focus Effects
 ///////////////////////////////////////////*/
@@ -30,7 +35,6 @@
 
 .form-info-steps__select-your-plane-plane:hover {
   border-color: hsl(243, 100%, 62%);
-  background-color: hsl(217, 100%, 97%);
 }
 .form-info-steps__personal-info-input:focus {
   color: hsl(213, 96%, 18%);
@@ -212,6 +216,7 @@ input {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  justify-content: left;
 }
 .form-info-steps__select-your-plane-plane {
   padding: 1rem;

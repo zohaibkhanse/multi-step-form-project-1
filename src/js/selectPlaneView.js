@@ -16,12 +16,21 @@ class SelectPlane extends view{
         if(!planeCon) return; 
             
         const {plane} = planeCon.dataset;
-                handler(+plane);
-                console.log(plane);
+        handler(+plane);
+
         })
     }
 
-    _generateDynamicMarkup(){
+    changePlaneHandler(handler){
+        this._parentElement.addEventListener('click', function(e){
+            const btn =  e.target.closest('.plane-options-btn');
+            if(!btn) return;
+            const {plane} = btn.dataset;
+            handler(+plane);
+        })
+    }
+
+    _generateMarkup(){
         const data = this._data;
 
         return `
@@ -31,9 +40,9 @@ class SelectPlane extends view{
                 <p  class="form-info-steps__select-your-plane-intro form-info-steps--intro">You have the option of monthly or yearly billing.</p>
                 <div class="form-info-steps__select-your-plane-planes">
                 ${
-                    data.map((el, i) => {
+                    data.plane.map((el, i) => {
                         return `
-                            <div class="form-info-steps__select-your-plane-plane" data-plane="${i}">
+                            <div class="form-info-steps__select-your-plane-plane ${el.active ? 'active-plane' : ''}" data-plane="${i+1}">
                                 <div class="plane-icon">
                                     <img src="${el.url}" alt="">
                                 </div>
@@ -49,12 +58,20 @@ class SelectPlane extends view{
                 }
                    
                 </div>
-
-                <div class="form-info-steps__select-your-plane-plane-options">
+                ${ data.planeID === 0 ? ` <div class="form-info-steps__select-your-plane-plane-options">
                     <span class="plane-monthly-option">Monthly</span>
-                    <div data-state="true" class="plane-options-btn"><span></span></div>
+                    <div data-plane="${data.planeID + 1}" class="plane-options-btn ${data.planeID === 0 ? 'monthly-plane-active ' : ''}"><span></span></div>
                     <span class="plane-yearly-option">Yearly</span>
-                </div>
+                    </div>` :
+
+                    ` <div class="form-info-steps__select-your-plane-plane-options">
+                    <span class="plane-monthly-option">Monthly</span>
+                    <div data-plane="${data.planeID - 1}" class="plane-options-btn ${data.planeID === 0 ? 'yearly-plane-active ' : ''}"><span></span></div>
+                    <span class="plane-yearly-option">Yearly</span>
+                    </div>`
+
+                }
+               
 
             </div>
             <!-- Select Your Plane END -->

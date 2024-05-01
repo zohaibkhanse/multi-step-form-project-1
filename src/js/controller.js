@@ -3,7 +3,7 @@ import * as model from "./model.js";
 import personalInfoView from "./personalInfoView.js";
 import btnView from "./btnView.js";
 import {validatePersonalInfo , validateEmail} from "./helper.js";
-import selectPlane from "./selectPlane.js";
+import selectPlaneView from "./selectPlaneView.js";
 
 
 const controleBtn = function(step){
@@ -22,9 +22,9 @@ const controleTestData = function(data, step){
     }
     if(validatePersonalInfo(data)){
         model.state.nextStep = true;
-        btnView.render(model.state);
+        // btnView.render(model.state);
         model.storePersonalInfoData(data);
-        selectPlane.renderDynamic(model.state.selectPlane.plane);
+        selectPlaneView.render(model.state.selectPlane);
 
     }
 }
@@ -35,10 +35,17 @@ function currentStep(){
 
 
 function controleUpgradePlane(planeNumber){
-    model.updateStep(planeNumber);
-    selectPlane.renderDynamic(model.state.selectPlane.plane);
+    model.upgradePlane(planeNumber);
+    console.log(planeNumber);
+    selectPlaneView.render(model.state.selectPlane);
 }
 
+function controleChangePlane(dataPlane){
+    model.changePlane(dataPlane);
+    model.state.selectPlane.planeID = dataPlane;
+    selectPlaneView.render(model.state.selectPlane);
+    console.log(dataPlane);
+}
 
 function init(){
     // view.addBtnHandler(controleBtn)
@@ -48,7 +55,8 @@ function init(){
     personalInfoView.render(model.state)
 
     ///////////////////////////////
-    selectPlane.upgradePlaneHandler(controleUpgradePlane)
+    selectPlaneView.upgradePlaneHandler(controleUpgradePlane)
+    selectPlaneView.changePlaneHandler(controleChangePlane)
 }
 
 init();

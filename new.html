@@ -45,11 +45,24 @@
         line-height: 1.8;
       }
 
+      button{
+        font-size: 1rem;
+        border: 0;
+        color:#fff;
+        transition: all 250ms linear;
+        padding: 1rem;
+      }
+
       </style>
 </head>
 <body>
 
-  <div class="container"></div>
+  <div class="container">
+    <button class="btn" data-id="2">Click</button>
+  </div>
+
+  
+  
 
 <script>
         const budget = Object.freeze([
@@ -143,35 +156,58 @@
 
         
         
-         fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/quran-api@1/editions.json').then(res => {
-          return res.json();
-         }).then(res => {
-           console.log(res);
-           const newObj = Object.entries(res);
-           console.log(newObj);
-          //  [["name", {language='urdu'}]]
-        const lang =  newObj.find(el=>{
-            return  el[1].language === 'Urdu';
-          })
+        //  fetch('https://cdn.jsdelivr.net/gh/fawazahmed0/quran-api@1/editions.json').then(res => {
+        //   return res.json();
+        //  }).then(res => {
+        //    console.log(res);
+        //    const newObj = Object.entries(res);
+        //    console.log(newObj);
+        //   //  [["name", {language='urdu'}]]
+        // const lang =  newObj.find(el=>{
+        //     return  el[1].language === 'Urdu';
+        //   })
 
-          console.log(lang[1].link);
+        //   console.log(lang[1].link);
 
-          return fetch(lang[1].link);
-         }).then(json => json.json())
-         .then(res => {
-           console.log(res);
-           container.innerHTML = '';
-          res.quran.forEach(el => {
-            //chapter: 1, verse: 1, text:
-              // console.log(`Chapter:${el.chapter} | V:${el.verse} | Translation: ${el.text}`);
-              container.insertAdjacentHTML( "beforeend" ,`
-                <p><span class="chapter">Chapter: ${el.chapter} </span><span class="verse">Verse: ${el.verse} </span><span class="translation">Translation: ${el.text}</span</p>
-              `
-        )
-          })
-         })
+        //   return fetch(lang[1].link);
+        //  }).then(json => json.json())
+        //  .then(res => {
+        //    console.log(res);
+        //    container.innerHTML = '';
+        //   res.quran.forEach(el => {
+        //     //chapter: 1, verse: 1, text:
+        //       // console.log(`Chapter:${el.chapter} | V:${el.verse} | Translation: ${el.text}`);
+        //       container.insertAdjacentHTML( "beforeend" ,`
+        //         <p><span class="chapter">Chapter: ${el.chapter} </span><span class="verse">Verse: ${el.verse} </span><span class="translation">Translation: ${el.text}</span</p>
+        //       `
+        // )
+        //   })
+        //  })
 
-       
+       ////////////////////////////
+
+       let btn;
+       let state;
+       container.addEventListener('click', function(e){
+        if(e.target.closest('.btn')){
+         state = +e.target.dataset.id;
+          container.innerHTML = '';
+          if(state === 2){
+            container.insertAdjacentHTML("afterbegin", `<button class="btn"  data-id="${state - 1}">Click To Change color</button>`);
+            console.log('First');
+            btn = document.querySelector('.btn');
+            btn.style.background = 'orange';
+            btn.style.padding = '1rem';
+          }
+          if(state === 1){
+            console.log('second');
+            container.insertAdjacentHTML("afterbegin", `<button class="btn"  data-id="${state + 1}">Click To Change color</button>`);
+            btn = document.querySelector('.btn');
+            btn.style.background = 'green';
+          }
+          console.log(state);
+        }
+     });
 
 
 

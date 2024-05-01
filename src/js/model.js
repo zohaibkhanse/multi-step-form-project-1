@@ -8,8 +8,11 @@ export const state = {
 
     selectPlane: {
         plane: [],
-        pleneTime: 'mon'
-    }
+        pleneTime: 'mon',
+        planeID: 0
+    },
+
+    selectedPlane: {}
 
 
 }
@@ -54,7 +57,7 @@ function changePlane(plane = 1){
 }
 
 
-function upgradePlane(data = 1){
+ function upgradePlane(data = 1){
     const planeTime = state.selectPlane.pleneTime;
      state.selectPlane.plane =   [
             {
@@ -81,6 +84,8 @@ function upgradePlane(data = 1){
         ]
 };
 
-changePlane(1);
-upgradePlane(3)
+changePlane(0);
+upgradePlane(1);
 console.log(state.selectPlane.plane);
+
+export {changePlane, upgradePlane};
