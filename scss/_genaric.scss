@@ -24,9 +24,18 @@
     font-size: 14px;
 }
 
-.form-info-steps__select-your-plane-plane.active-plane{
+.form-info-steps__select-your-plane-plane.active-plane
+{
     border-color: $Purplish-blue;
     background-color: $Magnolia;
 }
+
+.form-info-steps__pick-add-ons-add-ons.active-pick-add-ons-service{
+    background-color: $Magnolia;
+    border-color: $Purplish-blue;
+    
+}
+
+
 
 

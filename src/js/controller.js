@@ -4,6 +4,7 @@ import personalInfoView from "./personalInfoView.js";
 import btnView from "./btnView.js";
 import {validatePersonalInfo , validateEmail} from "./helper.js";
 import selectPlaneView from "./selectPlaneView.js";
+import pickAddOnsView from "./pickAddOnsView.js";
 
 
 const controleBtn = function(step){
@@ -36,7 +37,6 @@ function currentStep(){
 
 function controleUpgradePlane(planeNumber){
     model.upgradePlane(planeNumber);
-    console.log(planeNumber);
     selectPlaneView.render(model.state.selectPlane);
 }
 
@@ -44,7 +44,45 @@ function controleChangePlane(dataPlane){
     model.changePlane(dataPlane);
     model.state.selectPlane.planeID = dataPlane;
     selectPlaneView.render(model.state.selectPlane);
-    console.log(dataPlane);
+}
+
+//================================
+// Pick Add-Ons
+//================================
+
+function controlPickAddOns(service, state){
+    if(service === 1 && state === 1){
+       model.state.pickAddOns.onlineService = false;
+       model.state.pickAddOns.service1ID = 1;
+          pickAddOnsView.render(model.state);
+    }
+    if(service === 1 && state === 0){
+        model.state.pickAddOns.onlineService = true;
+        model.state.pickAddOns.service1ID = 0;
+        pickAddOnsView.render(model.state);
+    }
+    if(service === 2 && state === 1){
+       model.state.pickAddOns.largerStorage = false;
+       model.state.pickAddOns.service2ID = 1;
+       pickAddOnsView.render(model.state);
+    }
+    if(service === 2 && state === 0){
+       model.state.pickAddOns.largerStorage = true;
+       model.state.pickAddOns.service2ID = 0;
+       pickAddOnsView.render(model.state);
+    }
+    if(service === 3 && state === 1){
+       model.state.pickAddOns.customizableProfile = true;
+       model.state.pickAddOns.service3ID = 1;
+       pickAddOnsView.render(model.state);
+    }
+    if(service === 3 && state === 0){
+        model.state.pickAddOns.customizableProfile = false;
+        model.state.pickAddOns.service3ID = 0;
+        pickAddOnsView.render(model.state);
+    }
+
+   
 }
 
 function init(){
@@ -57,6 +95,9 @@ function init(){
     ///////////////////////////////
     selectPlaneView.upgradePlaneHandler(controleUpgradePlane)
     selectPlaneView.changePlaneHandler(controleChangePlane)
+    
+    // Pick Add-Ons
+    pickAddOnsView.addPickAddOnsHandler(controlPickAddOns);
 }
 
 init();

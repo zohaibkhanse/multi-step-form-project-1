@@ -59,15 +59,15 @@ class SelectPlane extends view{
                    
                 </div>
                 ${ data.planeID === 0 ? ` <div class="form-info-steps__select-your-plane-plane-options">
-                    <span class="plane-monthly-option">Monthly</span>
+                    <span class="plane-monthly-option ">Monthly</span>
                     <div data-plane="${data.planeID + 1}" class="plane-options-btn ${data.planeID === 0 ? 'monthly-plane-active ' : ''}"><span></span></div>
                     <span class="plane-yearly-option">Yearly</span>
                     </div>` :
 
                     ` <div class="form-info-steps__select-your-plane-plane-options">
                     <span class="plane-monthly-option">Monthly</span>
-                    <div data-plane="${data.planeID - 1}" class="plane-options-btn ${data.planeID === 0 ? 'yearly-plane-active ' : ''}"><span></span></div>
-                    <span class="plane-yearly-option">Yearly</span>
+                    <div data-plane="${data.planeID - 1}" id="changedYearlyPlane" class="plane-options-btn ${data.planeID === 0 ? 'yearly-plane-active ' : ''}"><span></span></div>
+                    <span class="plane-yearly-option ">Yearly</span>
                     </div>`
 
                 }

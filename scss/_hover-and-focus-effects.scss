@@ -13,4 +13,8 @@
     &__personal-info-input:focus{
         color:$Marine-blue;
     }
+    
+    &__pick-add-ons-add-ons:hover{
+       border: 1px solid $Purplish-blue;
+    }
  }
