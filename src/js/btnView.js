@@ -1,4 +1,5 @@
 import { validatePersonalInfo } from "./helper.js";
+
 import view from "./view.js";
 
 class btnView extends view {
@@ -12,7 +13,6 @@ class btnView extends view {
             if(!btn) return;
             const {step} = btn.dataset;
             const curStep = currentStep();
-            console.log(currentStep());
             if(curStep === 1){
                 if(e.target.closest('.btn--next')){
                     const data = new FormData(btn.closest('.container'));

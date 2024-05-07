@@ -13,6 +13,9 @@ class PickAddOnsView extends view {
         })
     }
 
+    
+
+
     _generateMarkup(){
         const data = this._data;
         return `

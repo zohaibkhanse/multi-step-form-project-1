@@ -3,11 +3,17 @@
   "version": "1.0.0",
   "description": "Practice Project",
   "scripts": {
-    "test": "sass --watch scss/main.scss scss/main.css"
+    "test": "sass --watch scss/main.scss scss/main.css",
+    "start": "parcel index.html",
+    "build": "parcel build  index.html"
   },
   "author": "ZOHAIB-KHAN",
   "license": "ISC",
   "devDependencies": {
+    "@parcel/transformer-sass": "^2.12.0",
     "sass": "^1.75.0"
+  },
+  "dependencies": {
+    "parcel": "^2.12.0"
   }
 }

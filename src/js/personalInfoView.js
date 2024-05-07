@@ -7,7 +7,6 @@ class personalInfoView extends view {
 
     _generateMarkup(){
         const data = this._data;
-        console.log(data);
         if(data.step === 1)
                 return  `
                 <!-- Personal Information START -->
@@ -29,7 +28,7 @@ class personalInfoView extends view {
 
             if(data.step === 2){
                const d2 =  this._data.selectPlane;
-               console.log(d2);
+               
                 return `
                 <!-- Select Your Plane START -->
                     <div class="form-info-steps__step form-info-steps__select-your-plane form-info-steps__step--2">
@@ -167,7 +166,7 @@ class personalInfoView extends view {
                     </div>
                         <div class="form-info-steps__finishing-up-summery total-price">
                             <p class="total-payment-title">Total ${data.selectPlane.planeTime === 'mo' ? '(per month)' : 'per (year)'}</p>
-                            <p class="total-payment-payment-info">Add Total Price</p>
+                            <p class="total-payment-payment-info">+$${data.totalPrice}/${data.selectPlane.planeTime}</p>
                         </div>
                     </div>
                 

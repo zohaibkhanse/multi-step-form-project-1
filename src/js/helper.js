@@ -16,8 +16,6 @@ export function validatePersonalInfo(data){
             const arr = el[1].toLocaleLowerCase().split('');
             emailIsCorrect = arr.some(el => el === '@') && arr.some(el => el === '.');
         }
-    
-       
     });
     
 
