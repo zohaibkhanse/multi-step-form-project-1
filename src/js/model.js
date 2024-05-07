@@ -82,7 +82,7 @@ export function changePlane(plane = 1){
                 planeName: 'Arcade',
                 plane: plane === 0 ? 'mo' : 'yr',
             price: plane === 0 ? 9 : 90,
-            url: './assets/images/icon-arcade.svg',
+            url: '/icon-arcade.940ee39e.svg',
             active: true,
             
         },
@@ -90,14 +90,14 @@ export function changePlane(plane = 1){
             planeName: 'Advance',
             plane: plane === 0 ? 'mo' : 'yr',
             price: plane === 0 ? 12 : 120,
-            url: './assets/images/icon-advanced.svg',
+            url: '/icon-advanced.be59467a.svg',
             active: false,
         },
         {
             planeName: 'Pro',
             plane: plane === 0 ? 'mo' : 'yr',
             price: plane === 0 ? 15 : 150,
-            url:'./assets/images/icon-pro.svg',
+            url:'/icon-pro.65931b10.svg',
             active: false,
         }
     ]
@@ -112,21 +112,21 @@ export function changePlane(plane = 1){
                 planeName: 'Arcade',
                 plane:  planeTime,
                 price: planeTime === 'mo' ? 9 : 90,
-                url: './assets/images/icon-arcade.svg',
+                url: '/icon-arcade.940ee39e.svg',
                 active: data === 1 ? true : false,
             },
             {
                 planeName: 'Advance',
                 plane: planeTime,
                 price: planeTime === 'mo' ? 12 : 120,
-                url: './assets/images/icon-advanced.svg',
+                url: '/icon-advanced.be59467a.svg',
                 active: data === 2 ? true : false,
             },
             {
                 planeName: 'Pro',
                 plane: planeTime,
                 price: planeTime === 'mo' ? 15 : 150,
-                url:'./assets/images/icon-pro.svg',
+                url:'/icon-pro.65931b10.svg',
                 active: data === 3 ? true : false,
             }
         ]

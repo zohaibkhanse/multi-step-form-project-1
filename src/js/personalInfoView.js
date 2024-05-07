@@ -177,7 +177,7 @@ class personalInfoView extends view {
                 return `
                 <!-- Thank You Step Start -->
                 <div class="form-info-steps__thank-you-info">
-                    <img class="form-info-steps__thank-you-info-image"src="./assets/images/icon-thank-you.svg" alt="">
+                    <img class="form-info-steps__thank-you-info-image" src="/icon-thank-you.edfd0039.svg" alt="">
                     <h2 class="form-info-steps__thank-you-info-title form-info-steps--title">Thank You!</h2>
                     <p  class="form-info-steps__thank-you-info-intro form-info-steps--intro">Thanks for confirming your subscription! We hope you have fun using our platform. If you ever need support, please feel free to email us at support@loremgaming.com.</p>
                 </div>
